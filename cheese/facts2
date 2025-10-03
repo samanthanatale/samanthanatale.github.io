@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Cheese are You?</title>
+
+
+<center>
+</head>
+<h1>Why does blue cheese smell? </h1>
+<br>
+
+<a href="fridge.html">a. Its been sitting in the fridge for too long</a>
+<br>
+<a href="bacteria.html">b. Compounds from mold and bacteria</a>
+<br>
+<a href="crying.html">c. Its crying because no one likes it</a>
+
+
+
+</html>

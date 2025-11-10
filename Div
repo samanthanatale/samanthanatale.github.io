@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Chelita</title>
+    <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!--  Navigatiin Bar-->
+
+ <div class="logo">
+         <img src="lachelita.png">
+    </div> 
+
+<div class="navbar"> 
+
+   <center>
+
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+    
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</center>
+</div>
+
+ <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to La Chelita<br>(Tex-Mex Diner)</h1>
+    </section>
+
+    <!-- Service Cards -->
+    <section class="services">
+        <div class="service-card">
+            <h2>Reserve a<br>table</h2>
+            <button>reserve a table</button>
+        </div>
+        <div class="service-card">
+            <h2>Delivery</h2>
+            <p>817-555-4321</p>
+            <button>order online</button>
+        </div>
+        <div class="service-card">
+            <h2>Curbside<br>Pickup</h2>
+            <button>UberEats</button>
+        </div>
+    </section>
+
+    <!-- Happy Hour Section -->
+    <section class="happy-hour-section">
+        <div class="cocktail-image">
+        </div>
+        <div class="happy-hour-content">
+            <h2>Happy<br>Hour!</h2>
+            <p>EVERYDAY 4pm-7pm</p>
+            <button>cocktail menu</button>
+        </div>
+    </section>
+
+    <!-- Weekly Specials -->
+    <section class="weekly-specials">
+        <h2>Weekly Specials</h2>
+        <div class="specials-grid">
+            <div class="special-item">
+                <img src="food1.png" alt="Special 1">
+            </div>
+            <div class="special-item">
+                <img src="food2.png" alt="Special 2">
+            </div>
+            <div class="special-item">
+                <img src="food4.png" alt="Special 3">
+            </div>
+            <div class="special-item">
+                <img src="food3.png" alt="Special 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>1200 E 6th St, Austin, TX 78702</p>
+            <p>917-555-4321</p>
+        </div>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">©</a>
+            <a href="#" aria-label="Twitter">t</a>
+        </div>
+    </section>
+</body>
+</html>

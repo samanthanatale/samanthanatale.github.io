@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Oreal Glam Shine Fresh</title>
+    <link rel="stylesheet" href="lip-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back</a>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container">
+        <h1>L'Oreal Glam Shine Fresh</h1>
+        
+        <div class="content">
+            <div class="product-image">
+                <img src="loreal.png" alt="L'Oreal Glam Shine Fresh" onclick="document.getElementById('player').style.display='block'; this.style.pointerEvents='none';">
+            </div>
+            
+            <div class="info-box">
+                <ul>
+                    <li>With glimmering, almost holographic shimmer, this gloss captured the glitzy, girly trend of the era. </li>
+                    <li>Perfect with the soft curls and glowing skin that dominated 2013.</li>
+                    <li>Love a shimmer gloss!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="player" class="spotify-player">
+            <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/7bYZBVrnRfqeaPbhRyEvK3?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>

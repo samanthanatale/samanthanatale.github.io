@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: #FFC5C6;
+    font-family: Georgia, serif;
+    padding: 40px 30px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #FFC5C6;
+}
+
+h1 {
+    color: #FF507C;
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Kavoon', cursive;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    color: white;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divider {
+    border: none;
+    border-top: 5px solid #FF507C;
+    margin: 0 -30px 60px -30px;
+    width: calc(100% + 60px);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 40px 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 35px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item.left {
+    justify-content: flex-start;
+}
+
+.timeline-item.right {
+    justify-content: flex-end;
+}
+
+.year {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+    font-family: 'Kavoon', cursive;
+}
+
+.line {
+    width: 120px;
+    height: 4px;
+    background-color: #FF507C;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #FF507C;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.circle.small {
+    width: 70px;
+    height: 70px;
+}
+
+.circle.large {
+    width: 130px;
+    height: 130px;
+}
+
+.timeline-item:hover .circle {
+    background-color: #C71585;
+    transform: scale(1.15);
+}
+
+.timeline-item:hover .line {
+    background-color: #C71585;
+}
+
+.timeline-item:hover .year {
+    color: #C71585;
+    transform: scale(1.05);
+}
+
+.timeline-item.left:hover {
+    transform: translateX(-8px);
+}
+
+.timeline-item.right:hover {
+    transform: translateX(8px);
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
+    .description {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-item {
+        max-width: 600px;
+    }
+    
+    .year {
+        font-size: 2rem;
+        min-width: 80px;
+    }
+    
+    .line {
+        width: 100px;
+    }
+    
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .circle.small {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle.large {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    .timeline-item {
+        max-width: 450px;
+        margin-bottom: 25px;
+    }
+    
+    .year {
+        font-size: 1.6rem;
+        min-width: 70px;
+    }
+    
+    .line {
+        width: 80px;
+    }
+    
+    .circle {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .circle.small {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle.large {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .description {
+        font-size: 0.85rem;
+    }
+    
+    .timeline-item {
+        max-width: 300px;
+    }
+    
+    .year {
+        font-size: 1.2rem;
+        min-width: 50px;
+    }
+    
+    .line {
+        width: 50px;
+        height: 2px;
+    }
+    
+    .circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle.small {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .circle.large {
+        width: 65px;
+        height: 65px;
+    }
+}

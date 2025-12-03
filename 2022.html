@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dior Addict Lip Glow Oil</title>
+    <link rel="stylesheet" href="lip-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+     <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back</a>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container">
+        <h1>Dior Addict Lip Glow Oil</h1>
+        
+        <div class="content">
+            <div class="product-image">
+                <img id="diorImage" src="dior.png" alt="Dior Addict Lip Glow Oil" style="cursor: pointer;">
+            </div>
+            
+            <div class="info-box">
+                <ul>
+                    <li>This was the year of lip oils.</li>
+                    <li>Dior's version of lip oil became a luxury favorite because of its glossy finish and soft tint.</li>
+                    <li>However, this lip oil does NOT last long at all. I tried to love this lip oil, but it is very overhyped.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="player" style="display: none; margin-top: 40px; text-align: center;">
+            <iframe id="spotifyPlayer"
+                    style="border-radius:12px" 
+                    src="" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #player {
+            animation: fadeIn 0.5s;
+        }
+    </style>
+    
+    <script>
+        document.getElementById('diorImage').addEventListener('click', function() {
+            // Get the player div and iframe
+            const player = document.getElementById('player');
+            const iframe = document.getElementById('spotifyPlayer');
+            
+            // Set the iframe source
+            iframe.src = 'https://open.spotify.com/embed/track/4Dvkj6JhhA12EX05fT7y2e?utm_source=generator';
+            
+            // Show the player
+            player.style.display = 'block';
+            
+            // Disable further clicks on the image
+            this.style.pointerEvents = 'none';
+            
+            // Optional: Scroll to the player smoothly
+            setTimeout(() => {
+                player.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        });
+    </script>
+    
+</body>
+</html>

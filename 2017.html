@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenty Beauty Gloss Bomb</title>
+    <link rel="stylesheet" href="lip-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+     <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back</a>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container">
+        <h1>Fenty Beauty Gloss Bomb</h1>
+        
+        <div class="content">
+            <div class="product-image">
+                <img id="fentyImage" src="fenty.png" alt="Fenty Beauty Gloss Bomb" style="cursor: pointer;">
+            </div>
+            
+            <div class="info-box">
+                <ul>
+                    <li>Rihanna's launch changed the gloss world.</li>
+                    <li>The formula was smooth, universally flattering, and made glossy lips cool again after years of matte lipsticks.</li>
+                    <li>I still use this lip gloss to this day, because it gives a glossy finish.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="player" style="display: none; margin-top: 40px; text-align: center;">
+            <iframe id="spotifyPlayer"
+                    style="border-radius:12px" 
+                    src="" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #player {
+            animation: fadeIn 0.5s;
+        }
+    </style>
+    
+    <script>
+        document.getElementById('fentyImage').addEventListener('click', function() {
+            // Get the player div and iframe
+            const player = document.getElementById('player');
+            const iframe = document.getElementById('spotifyPlayer');
+            
+            // Set the iframe source
+            iframe.src = 'https://open.spotify.com/embed/track/7qiZfU4dY1lWllzX7mPBI3?utm_source=generator';
+            
+            // Show the player
+            player.style.display = 'block';
+            
+            // Disable further clicks on the image
+            this.style.pointerEvents = 'none';
+            
+            // Optional: Scroll to the player smoothly
+            setTimeout(() => {
+                player.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        });
+    </script>
+    
+</body>
+</html>

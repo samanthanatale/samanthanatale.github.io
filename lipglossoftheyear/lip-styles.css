@@ -8,10 +8,52 @@ body {
     background-color: #FFC5C6;
     background-image: url('paper.png');
     background-repeat: no-repeat;
-    font-family: Georgia, serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Indie Flower', cursive, Georgia, serif;
     padding: 60px 40px;
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
+}
+
+/* Floating Sparkles */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    background-image: ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sparkleFloat 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+body::before {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+body::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: translateY(-25px) rotate(180deg) scale(1.3);
+        opacity: 1;
+    }
 }
 
 .back-button {
@@ -26,20 +68,68 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    font-family: Georgia, serif;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+    font-family: 'Kavoon', cursive;
     display: inline-block;
+    z-index: 100;
 }
 
 .back-button:hover {
     background-color: #C71585;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px) rotate(-2deg);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:active {
+    transform: translateY(0px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 60px 50px;
+    position: relative;
+}
+
+/* Star Stickers - Positioned Around Content */
+h1::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    background-image: ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: starTwinkle 2s ease-in-out infinite;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-image: ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: starTwinkle 2s ease-in-out infinite 0.5s;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+}
+
+@keyframes starTwinkle {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% { 
+        transform: scale(1.2) rotate(72deg);
+        opacity: 1;
+    }
 }
 
 h1 {
@@ -49,7 +139,20 @@ h1 {
     text-align: center;
     margin-bottom: 60px;
     font-family: 'Kavoon', cursive;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    text-shadow: 4px 4px 8px rgba(255, 80, 124, 0.3);
+    animation: slideDown 0.8s ease-out;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .content {
@@ -57,27 +160,185 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 50px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    position: relative;
 }
 
-/* Lip gloss image hover effect */
+/* Heart Stickers Around Content */
+.content::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 10%;
+    width: 85px;
+    height: 85px;
+    background-image: url('heart1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: heartBounce 3s ease-in-out infinite;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+    z-index: 20;
+}
+
+.content::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    background-image: url('heart2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: heartBounce 3s ease-in-out infinite 1s;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+    z-index: 20;
+}
+
+@keyframes heartBounce {
+    0%, 100% { 
+        transform: translateY(0px) scale(1);
+    }
+    50% { 
+        transform: translateY(-15px) scale(1.15);
+    }
+}
+
+.content.reverse {
+    flex-direction: row-reverse;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Product Image with Tape */
+.product-image {
+    position: relative;
+    padding-top: 25px;
+}
+
+/* Tape on Product Image */
+.product-image::before,
+.product-image::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background: rgba(255, 255, 200, 0.7);
+    box-shadow: 
+        inset 0 0 6px rgba(0,0,0,0.1),
+        0 2px 4px rgba(0,0,0,0.2);
+    z-index: 25;
+}
+
+.product-image::before {
+    top: 0;
+    left: 25%;
+    transform: rotate(-8deg);
+}
+
+.product-image::after {
+    top: 0;
+    right: 25%;
+    transform: rotate(8deg);
+}
+
 .product-image img {
     width: 400px;
     height: 400px;
     display: block;
     cursor: pointer;
     transition: transform 0.3s ease;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.15),
+        0 0 0 10px rgba(255,255,255,0.9);
+    background: white;
+    padding: 15px;
+    position: relative;
+    margin: 0 auto;
 }
 
 .product-image img:hover {
-    transform: rotate(-5deg) scale(1.1);
+    transform: rotate(-3deg) scale(1.05);
 }
 
+/* Info Box with Scrapbook Style */
 .info-box {
-    background-color: white;
+    background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
     padding: 50px 60px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 4px dashed #ffb6c1;
+    box-shadow: 0 10px 30px rgba(255,182,193,0.3);
     max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+/* Heart Sticker on Info Box */
+.info-box::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 75px;
+    height: 75px;
+    background-image: url('heart3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: heartPulse 2.5s ease-in-out infinite;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.2));
+    z-index: 30;
+}
+
+@keyframes heartPulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+    }
+    50% { 
+        transform: scale(1.15) rotate(5deg);
+    }
+}
+
+/* Star Sticker on Info Box */
+.info-box::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    background-image: url('star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: starSpin 4s linear infinite;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.2));
+    z-index: 30;
+}
+
+@keyframes starSpin {
+    0% { 
+        transform: rotate(0deg);
+    }
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+
+.info-box:hover {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 0 15px 40px rgba(255, 80, 124, 0.25);
 }
 
 .info-box ul {
@@ -91,42 +352,73 @@ h1 {
     line-height: 1.8;
     margin-bottom: 25px;
     position: relative;
-    padding-left: 25px;
+    padding-left: 35px;
+    transition: all 0.3s ease;
+    font-family: 'Indie Flower', cursive;
+}
+
+.info-box li:hover {
+    color: #C71585;
+    transform: translateX(8px);
 }
 
 .info-box li:last-child {
     margin-bottom: 0;
 }
 
+/* Heart Bullets */
 .info-box li::before {
-    content: "•";
+    content: "♡";
     position: absolute;
     left: 0;
     font-size: 1.5rem;
     font-weight: bold;
+    transition: all 0.3s ease;
+    color: #ff69b4;
 }
 
-/* Spotify Player Styles */
+.info-box li:hover::before {
+    content: "♥";
+    transform: scale(1.4) rotate(10deg);
+    color: #ff1493;
+}
+
+
+  /* Spotify Player Popup Styles */
 .spotify-player {
-    display: none;
-    margin-top: 40px;
-    text-align: center;
-    animation: fadeIn 0.5s ease;
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    max-height: 0;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.spotify-player.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    max-height: 400px;
+}
+
+/* Optional: Make the lip image clickable with hover effect */
+.product-image img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    body {
+        padding: 40px 20px;
+    }
+    
     .back-button {
         top: 20px;
         left: 20px;
@@ -134,14 +426,29 @@ h1 {
         font-size: 1rem;
     }
     
+    .container {
+        padding: 40px 30px;
+    }
+    
     h1 {
         font-size: 3.5rem;
         margin-bottom: 40px;
     }
     
-    .content {
+    h1::before,
+    h1::after {
+        font-size: 30px;
+    }
+    
+    .content,
+    .content.reverse {
         flex-direction: column;
         gap: 30px;
+    }
+    
+    .content::before,
+    .content::after {
+        font-size: 35px;
     }
     
     .product-image img {
@@ -170,8 +477,18 @@ h1 {
         font-size: 0.9rem;
     }
     
+    .container {
+        padding: 30px 20px;
+    }
+    
     h1 {
         font-size: 2.5rem;
+    }
+    
+    h1::before,
+    h1::after {
+        font-size: 25px;
+        top: 10px;
     }
     
     .product-image img {
@@ -185,5 +502,10 @@ h1 {
     
     .info-box li {
         font-size: 1rem;
+    }
+    
+    .info-box::before,
+    .info-box::after {
+        font-size: 28px;
     }
 }

@@ -18,7 +18,7 @@
         
         <div class="content">
             <div class="product-image">
-                <img src="summer.png" alt="Summer Fridays Lip Butter Balm" onclick="document.getElementById('player').style.display='block'; this.style.pointerEvents='none';">
+                <img id="summerImage" src="summer.png" alt="Summer Fridays Lip Butter Balm" style="cursor: pointer;">
             </div>
             
             <div class="info-box">
@@ -30,9 +30,10 @@
             </div>
         </div>
         
-        <div id="player" class="spotify-player">
-            <iframe style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/track/42UBPzRMh5yyz0EDPr6fr1?utm_source=generator" 
+        <div id="player" style="display: none; margin-top: 40px; text-align: center;">
+            <iframe id="spotifyPlayer"
+                    style="border-radius:12px" 
+                    src="" 
                     width="100%" 
                     height="352" 
                     frameBorder="0" 
@@ -42,5 +43,39 @@
             </iframe>
         </div>
     </div>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #player {
+            animation: fadeIn 0.5s;
+        }
+    </style>
+    
+    <script>
+        document.getElementById('summerImage').addEventListener('click', function() {
+            // Get the player div and iframe
+            const player = document.getElementById('player');
+            const iframe = document.getElementById('spotifyPlayer');
+            
+            // Set the iframe source
+            iframe.src = 'https://open.spotify.com/embed/track/42UBPzRMh5yyz0EDPr6fr1?utm_source=generator';
+            
+            // Show the player
+            player.style.display = 'block';
+            
+            // Disable further clicks on the image
+            this.style.pointerEvents = 'none';
+            
+            // Optional: Scroll to the player smoothly
+            setTimeout(() => {
+                player.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        });
+    </script>
+    
 </body>
 </html>

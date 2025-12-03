@@ -1,49 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
 body {
-    background-color: #FFC5C6;
-    font-family: Georgia, serif;
-    padding: 40px 30px;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #FFC5C6 0%, #FFD6D7 60%, #FFC5C6 100%);
     min-height: 100vh;
 }
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    background-color: #FFC5C6;
-}
-
 h1 {
-    color: #FF507C;
+    color: #FF507A;
     font-size: 5rem;
     font-weight: 400;
     text-align: center;
     margin-bottom: 30px;
     font-family: 'Kavoon', cursive;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    
 }
 
-.description {
-    color: white;
-    font-size: 1.3rem;
-    line-height: 1.6;
+/* Cover Page Styles */
+.cover-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.cover-content {
     text-align: center;
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cover-title {
+    font-size: 5rem;
+    color: #FF507A;
     margin-bottom: 40px;
-    padding: 0 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cover-description {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: white;
+    margin-bottom: 60px;
+    font-style: italic;
+}
+
+.scroll-button {
+    background: #FF507A;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 86, 123, 0.3);
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.scroll-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 86, 123, 0.4);
+    background: #C71585;
+}
+
+.scroll-button:active {
+    transform: translateY(-1px);
+}
+
+/* Timeline Section Styles */
+.timeline-section {
+    min-height: 100vh;
+    padding: 60px 20px;
+}
+
+.container {
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .divider {
@@ -253,4 +305,11 @@ h1 {
         width: 65px;
         height: 65px;
     }
+}
+
+.divider {
+    border: none;
+    border-top: 5px solid #FF507C;
+    margin: 0 -30px 60px -30px;
+    width: calc(100% + 60px);
 }
